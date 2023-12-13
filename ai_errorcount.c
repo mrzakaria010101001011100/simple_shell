@@ -5,7 +5,7 @@
  * @darel: data relevant (counter, arguments)
  * Return: error message.
  */
-char *error_env_message(data_shell *darel)
+char *error_env_message(list_ti *darel)
 {
 	int lengthes;
 	char *error;
@@ -41,7 +41,7 @@ char *error_env_message(data_shell *darel)
  *
  * Return: The error string.
  */
-char *error_path(data_shell *darel)
+char *error_path(list_ti *darel)
 {
 	int lengthes;
 	char *v_str;
@@ -67,4 +67,3 @@ char *error_path(data_shell *darel)
 	free(v_str);
 	return (error);
 }
-

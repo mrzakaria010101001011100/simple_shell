@@ -9,7 +9,7 @@
  * @v_str: counter message to show the line
  * Return: show if there is any error message
  */
-char *st_con(data_shell *darel, char *meesg, char *error, char *v_str)
+char *st_con(list_ti *darel, char *meesg, char *error, char *v_str)
 {
 	char *sgn_flag;
 
@@ -43,7 +43,7 @@ char *st_con(data_shell *darel, char *meesg, char *error, char *v_str)
  * @darel: data relevant to direcory
  * Return:  show if there is any Error message
  */
-char *error_get_directory(data_shell *darel)
+char *error_get_directory(list_ti *darel)
 {
 	int lengthes, length_id;
 	char *error, *v_str, *meesg;
@@ -82,7 +82,7 @@ char *error_get_directory(data_shell *darel)
  * @darel: counter and arguments
  * Return: show if there is any errors message
  */
-char *error_not_Messagefound(data_shell *darel)
+char *error_not_Messagefound(list_ti *darel)
 {
 	int lengthes;
 	char *error;
@@ -114,7 +114,7 @@ char *error_not_Messagefound(data_shell *darel)
  * @darel: counter and arguments
  * Return: show if there is any error message
  */
-char *error_exit_message(data_shell *darel)
+char *error_exit_message(list_ti *darel)
 {
 	int lengthes;
 	char *error;

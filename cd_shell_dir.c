@@ -5,7 +5,7 @@
  * @darel: data relevant
  * Return: show if it is sucess
  */
-int cd_shell_dir(data_shell *darel)
+int cd_shell_dir(list_ti *darel)
 {
 	char *dir;
 	int ishome, ishome2, isddash;

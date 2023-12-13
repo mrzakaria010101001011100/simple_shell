@@ -5,7 +5,7 @@
  * @darel: data relevant to the environ
  * Return: show if there is no return
  */
-void cd_parentdot(data_shell *darel)
+void cd_parentdot(list_ti *darel)
 {
 	char pwd[PATH_MAX];
 	char *dir, *cp_pwd, *cp_strtok_pwd;
@@ -55,7 +55,7 @@ void cd_parentdot(data_shell *darel)
  * @darel: data relevant of the dir
  * Return: show if there is no return
  */
-void cdirectory_to(data_shell *darel)
+void cdirectory_to(list_ti *darel)
 {
 	char pwd[PATH_MAX];
 	char *dir, *cp_pwd, *cp_dir;
@@ -88,7 +88,7 @@ void cdirectory_to(data_shell *darel)
  * @darel: environ
  * Return: show if there is no return
  */
-void cdirectory_previous(data_shell *darel)
+void cdirectory_previous(list_ti *darel)
 {
 	char pwd[PATH_MAX];
 	char *p_pwd, *p_oldpwd, *cp_pwd, *cp_oldpwd;
