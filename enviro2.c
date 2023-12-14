@@ -25,13 +25,13 @@ char *copies_info(char *name, char *value)
 }
 
 /**
- * set_envi - sets an environment var
+ * set_env - sets an environment var
  * @name: name of environment var
  * @value: value of  environment var
  * @darel: environ
  * Return show if there is no return
  */
-void set_envi(char *name, char *value, list_ti *darel)
+void set_env(char *name, char *value, list_ti *darel)
 {
 	int i;
 	char *var_env, *name_env;
@@ -70,7 +70,7 @@ int _setenv(list_ti *darel)
 		return (1);
 	}
 
-	set_envi(darel->args[1], darel->args[2], darel);
+	set_env(darel->args[1], darel->args[2], darel);
 
 	return (1);
 }

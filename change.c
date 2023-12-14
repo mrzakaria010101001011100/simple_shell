@@ -12,11 +12,11 @@ void cd_parentdot(list_ti *darel)
 
 	getcwd(pwd, sizeof(pwd));
 	cp_pwd = _dupheapmemo(pwd);
-	set_envi("OLDPWD", cp_pwd, darel);
+	set_env("OLDPWD", cp_pwd, darel);
 	dir = darel->args[1];
 	if (_strcmp(".", dir) == 0)
 	{
-		set_envi("PWD", cp_pwd, darel);
+		set_env("PWD", cp_pwd, darel);
 		free(cp_pwd);
 		return;
 	}
@@ -38,12 +38,12 @@ void cd_parentdot(list_ti *darel)
 	if (cp_strtok_pwd != NULL)
 	{
 		chdir(cp_strtok_pwd);
-		set_envi("PWD", cp_strtok_pwd, darel);
+		set_env("PWD", cp_strtok_pwd, darel);
 	}
 	else
 	{
 		chdir("/");
-		set_envi("PWD", "/", darel);
+		set_env("PWD", "/", darel);
 	}
 	darel->status = 0;
 	free(cp_pwd);
@@ -70,10 +70,10 @@ void cdirectory_to(list_ti *darel)
 	}
 
 	cp_pwd = _dupheapmemo(pwd);
-	set_envi("OLDPWD", cp_pwd, darel);
+	set_env("OLDPWD", cp_pwd, darel);
 
 	cp_dir = _dupheapmemo(dir);
-	set_envi("PWD", cp_dir, darel);
+	set_env("PWD", cp_dir, darel);
 
 	free(cp_pwd);
 	free(cp_dir);
@@ -103,12 +103,12 @@ void cdirectory_previous(list_ti *darel)
 	else
 		cp_oldpwd = _dupheapmemo(p_oldpwd);
 
-	set_envi("OLDPWD", cp_pwd, darel);
+	set_env("OLDPWD", cp_pwd, darel);
 
 	if (chdir(cp_oldpwd) == -1)
-		set_envi("PWD", cp_pwd, darel);
+		set_env("PWD", cp_pwd, darel);
 	else
-		set_envi("PWD", cp_oldpwd, darel);
+		set_env("PWD", cp_oldpwd, darel);
 
 	p_pwd = _envvariable("PWD", darel->_environ);
 
@@ -141,7 +141,7 @@ void cd_home_dir(list_ti *darel)
 
 	if (home == NULL)
 	{
-		set_envi("OLDPWD", p_pwd, darel);
+		set_env("OLDPWD", p_pwd, darel);
 		free(p_pwd);
 		return;
 	}
@@ -153,8 +153,8 @@ void cd_home_dir(list_ti *darel)
 		return;
 	}
 
-	set_envi("OLDPWD", p_pwd, darel);
-	set_envi("PWD", home, darel);
+	set_env("OLDPWD", p_pwd, darel);
+	set_env("PWD", home, darel);
 	free(p_pwd);
 	darel->status = 0;
 }

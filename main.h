@@ -171,7 +171,7 @@ int _env(list_ti *darel);
 
 /* enviro2.c */
 char *copies_info(char *name, char *value);
-void set_envi(char *name, char *value, list_ti *darel);
+void set_env(char *name, char *value, list_ti *darel);
 int _setenv(list_ti *darel);
 int _unsetenv(list_ti *darel);
 
